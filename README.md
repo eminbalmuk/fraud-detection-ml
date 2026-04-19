@@ -4,10 +4,10 @@ Bu projede, 1 milyonun üzerinde işlem verisi içeren bir veri seti üzerinde, 
 
 ## Veri Seti Analizi
 
-Bu projede kullanılan veri seti, Hugging Face üzerindeki [dazzle-nu/CIS435-CreditCardFraudDetection](https://huggingface.co/datasets/dazzle-nu/CIS435-CreditCardFraudDetection) kaynağından alınmıştır. Toplamda **1,048,575 işlem** içeren bu veri seti, gerçek dünya harcama kalıplarını simüle eden kapsamlı bir yapıya sahiptir. Modellerin gerçek hayat koşullarında test edilmesi için bu veri hacmi kullanılmıştır.
+Bu projede kullanılan veri seti, Hugging Face üzerindeki [dazzle-nu/CIS435-CreditCardFraudDetection](https://huggingface.co/datasets/dazzle-nu/CIS435-CreditCardFraudDetection) kaynağından alınmıştır. Toplamda **1,048,575 işlem** içeren bu veri seti, gerçek dünya banka harcamalarını iyi temsil eden kapsamlı bir yapıya sahiptir. Modellerin gerçek hayat koşullarına uygun test edilmesi için bu veri seti dağılımı kullanılmıştır.
 
 ### Veri Setinin Dağılımı ve Zorluklar
-Dolandırıcılık tespiti projelerinin en büyük karakteristiği olan **Sınıf Dengesizliği**, bu veri setinde de belirgindir. İşlemlerin sadece yaklaşık **%0.58**'i dolandırıcılık olarak etiketlenmiştir. Bu durum, modelin "her şeye normal" diyerek yanıltıcı bir %99.4 accuracy almasını engellemek için PR-AUC gibi daha dürüst metriklerin kullanılmasını zorunlu kılmıştır.
+Dolandırıcılık tespiti projelerinin en büyük karakteristiği olan **Sınıf Dengesizliği**, bu veri setinde de belirgindir. İşlemlerin sadece yaklaşık **%0.58**'i dolandırıcılık olarak etiketlenmiştir. Bu durum, modelin her şeye normal diyerek yanıltıcı bir %99.4 accuracy almasını engellemek için PR-AUC gibi daha dürüst metriklerin kullanılmasını zorunlu kılmıştır.
 
 ### Temel Veri Dağılımı
 Aşağıdaki görselde veri setinin sınıf dağılımı, işlem miktarları ve zaman bazlı yoğunlukları görülmektedir:
@@ -43,7 +43,7 @@ Aşağıdaki metrikler, modellerin 2000 iterasyon sonucu elde edilen performans 
 | **LightGBM** | 0.5002 | 0.40 | 0.82 | 0.53 |
 
 > [!TIP]
-> **Sonuç:** CatBoost yakalama gücü (Recall) açısından en başarılı modelken, XGBoost yanlış alarm sayısını (Precision) minimize etme konusunda en dengeli performansı sergilemiştir.
+> **Sonuç:** CatBoost yüksek Recall değeriyle yakalama gücü açısından en başarılı modelken, XGBoost yüksek Precision değeriyle false positive sayısını minimize etme konusunda en dengeli performansı sergilemiştir.
 
 ## Görsel Analizler
 
